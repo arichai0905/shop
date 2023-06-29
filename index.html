@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shoping</title>
+
+    <link rel="stylesheet" href="index.css">
+    <script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
+    <script src="index.js   "></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+
+    <nav>
+        <div class="nav-container">
+            <a href="index.html">
+                <img src="./imgs/dog-logo.jpg" class="logonav">
+            </a>
+
+            <div class="nav-profile">
+                <p class="nav-profile-name">Doglover</p>
+                <div class="nav-profile-cart">
+                    <i class="fas fa-cart-shopping"></i>
+                    <div class="cartcount">5</div>
+                </div>
+                
+            </div>
+            
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="sidebar">
+            <input onkeyup="searchsomething(this)" id="txt_search" type="text" class="sidebar-search" placeholder="search something...">
+            <a onclick="searchproduct('all')" class="sidebar-item">
+                All products
+            </a>
+            <a onclick="searchproduct('toy')" class="sidebar-item">
+                toy
+            </a>
+            <a onclick="searchproduct('food')" class="sidebar-item">
+                food
+            </a>
+            <a onclick="searchproduct('shirt')" class="sidebar-item">
+                shirt
+            </a>
+
+        </div>
+
+        <div id="productlist" class="product">
+
+            
+        </div>
+    </div>
+    
+    <div class="modal" style="display: none;">
+        <div class="modal-bg"></div>
+        <div class="modal-page">
+            <h2>Details</h2>
+            <br>
+            <div class="modaldesc-content">
+                <img class="modaldesc-img" src="https://images.unsplash.com/photo-1625556580790-7ce9101965b1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80" alt="">
+                <div class="modaldesc-detail">
+                    <p style="font-size: 1.5vw;">Product name</p>
+                    <p style="font-size: 1.2vw;">500THB</p>
+                    <br>
+                    <p style="color: #adadad;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque animi inventore quod,</p>
+                    <div class="btn-control">
+                        <button class="btn">
+                            Close
+                        </button>
+                        <button class="btn btn-buy" >
+                            Add to cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" style="display: none;" >
+        <div class="modal-bg"></div>
+        <div class="modal-page">
+            <h2>My cart</h2>
+            <br>
+
+            <div class="cartlist">
+                <div class="cartlist-items">
+                    <div class="cartlist-left">
+                        <img src="https://images.unsplash.com/photo-1625556580790-7ce9101965b1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80" alt="">
+                        <div class="cartlist-detail">
+                            <p style="font-size: 1.5vw;">Product name</p>
+                            <p style="font-size: 1.2vw;">500THB</p>
+                        </div>
+                    </div>
+                    <div class="cartlist-right">
+                        <p class="btncart-control">-</p>
+                        <p style="margin: 0 20px;">1</p>
+                        <p class="btncart-control">+</p>
+                    </div>
+                </div>
+
+                <div class="cartlist-items">
+                    <div class="cartlist-left">
+                        <img src="https://images.unsplash.com/photo-1625556580790-7ce9101965b1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80" alt="">
+                        <div class="cartlist-detail">
+                            <p style="font-size: 1.5vw;">Product name</p>
+                            <p style="font-size: 1.2vw;">500THB</p>
+                        </div>
+                    </div>
+                    <div class="cartlist-right">
+                        <p class="btncart-control">-</p>
+                        <p style="margin: 0 20px;">1</p>
+                        <p class="btncart-control">+</p>
+                    </div>
+                </div>
+
+                
+
+                <div class="cartlist-items">
+                    <div class="cartlist-left">
+                        <img src="https://images.unsplash.com/photo-1625556580790-7ce9101965b1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80" alt="">
+                        <div class="cartlist-detail">
+                            <p style="font-size: 1.5vw;">Product name</p>
+                            <p style="font-size: 1.2vw;">500THB</p>
+                        </div>
+                    </div>
+                    <div class="cartlist-right">
+                        <p class="btncart-control">-</p>
+                        <p style="margin: 0 20px;">1</p>
+                        <p class="btncart-control">+</p>
+                    </div>
+                </div>
+            </div>
+            <div class="btn-control">
+                <button class="btn">
+                    Cancel
+                </button>
+                <button class="btn btn-buy">Buy</button>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
