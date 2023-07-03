@@ -33,6 +33,7 @@
     <div class="container">
         <div class="sidebar">
             <input onkeyup="searchsomething(this)" id="txt_search" type="text" class="sidebar-search" placeholder="search something...">
+            
             <a onclick="searchproduct('all')" class="sidebar-item">
                 All products
             </a>
@@ -54,8 +55,8 @@
         </div>
     </div>
     
-    <div class="modal" style="display: none;">
-        <div class="modal-bg"></div>
+    <div id="show-modal" class="modal" style="display: none;">
+        <div onclick="closeModal()" class="modal-bg"></div>
         <div class="modal-page">
             <h2>Details</h2>
             <br>
@@ -66,7 +67,7 @@
                     <p style="font-size: 1.2vw;">500THB</p>
                     <br>
                     <p style="color: #adadad;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque animi inventore quod,</p>
-                    <div class="btn-control">
+                    <div  onclick="closeModal()" class="btn-control">
                         <button class="btn">
                             Close
                         </button>

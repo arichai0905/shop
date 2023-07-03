@@ -24,7 +24,7 @@ var product = [{
 $(document).ready(()=> {
     var html = '';
     for (let i = 0; i < product.length; i++) {
-        html += `<div class="product-items ${product[i].type}">
+        html += `<div onclick="openProductModal(${i})" class="product-items ${product[i].type}">
                     <img class="product-img" src="${product[i].img}" alt="">
                     <p style="font-size: 1.2vw;">${product[i].name}</p>
                      <p style="font-size: .9vw;">${numberWithCommas(product[i].price)}</p>
@@ -51,7 +51,7 @@ function searchsomething(searchbox) {
     for (let i = 0; i < product.length; i++) {
 
         if ( product[i].name.includes(value) ) {
-            html += `<div class="product-items ${product[i].type}">
+            html += `<div onclick="openProductModal(${i})" class="product-items ${product[i].type}">
                     <img class="product-img" src="${product[i].img}" alt="">
                     <p style="font-size: 1.2vw;">${product[i].name}</p>
                      <p style="font-size: .9vw;">${numberWithCommas(product[i].price)}</p>
@@ -76,4 +76,15 @@ function searchproduct(productmenu) {
     }else{
         $("."+productmenu).css('display','block') 
     }
+}
+
+var productindex=0
+function openProductModal(index) {
+    productindex = index;
+    console.log(productindex)
+    $("#show-modal").css('display' , 'flex')
+}
+
+function closeModal() {
+    $(".modal").css('display' , 'none')
 }

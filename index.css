@@ -133,6 +133,7 @@ nav {
     color: #000;
     font-size: 1.2vw;
     transition: 0.3s;
+    cursor: pointer;
 }
 
 .sidebar-item:hover {
